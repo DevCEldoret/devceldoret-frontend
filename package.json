@@ -3,6 +3,19 @@
   "version": "1.0.0",
   "description": "Developer Circles Eldoret Website",
   "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "build": "webpack --mode production",
+    "lint": "eslint src --ext tsx",
+    "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && npm run lint && npm test"
+    }
+  },
   "dependencies": {
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
@@ -13,9 +26,12 @@
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
+    "@testing-library/react": "^9.3.0",
     "@types/react": "^16.9.4",
     "@types/react-dom": "^16.9.1",
     "@types/react-router-dom": "^5.1.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
@@ -24,14 +40,7 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --open",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "build": "webpack --mode production"
-  },
   "author": "Developer Circles Community",
   "license": "ISC",
-  "homepage": "https://github.com/DevCEldoret/devceldoret-frontend"
+  "homepage": "https://devceldoret.github.io/"
 }
