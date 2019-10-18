@@ -1,9 +1,9 @@
 import React from "react";
 const HomeComponent = () => {
   return (
-    <div>
+    <main>
       <h1>Developer Circles Eldoret</h1>
-    </div>
+    </main>
   );
 };
 export default HomeComponent;

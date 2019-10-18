@@ -4,12 +4,13 @@
   "description": "Developer Circles Eldoret Website",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --mode development",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "webpack --mode production",
     "lint": "eslint src --ext tsx",
-    "test": "jest"
+    "test": "jest",
+    "bundle-report": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "husky": {
     "hooks": {
@@ -17,6 +18,8 @@
     }
   },
   "dependencies": {
+    "@material-ui/core": "^4.5.0",
+    "@material-ui/icons": "^4.5.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-router": "^5.1.2",
@@ -26,6 +29,7 @@
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.6.0",
     "@testing-library/react": "^9.3.0",
     "@types/jest": "^24.0.18",
     "@types/react": "^16.9.4",
@@ -34,9 +38,13 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "file-loader": "^4.2.0",
     "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.8",
@@ -46,6 +54,7 @@
     "pretty-quick": "^1.11.1",
     "typescript": "^3.6.3",
     "webpack": "^4.41.0",
+    "webpack-bundle-analyzer": "^3.5.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2"
   },
