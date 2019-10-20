@@ -1,0 +1,8 @@
+.sectionTitle {
+  margin: 2rem 0 !important;
+}
+
+.section {
+  border-bottom: 1px solid lightgrey;
+  min-height: 500px;
+}

@@ -1,0 +1,16 @@
+.banner {
+  display: flex;
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 1px solid lightgray;
+  background: #36d1dc;
+  background: -webkit-linear-gradient(to right, #5b86e5, #36d1dc);
+  background: linear-gradient(to right, #5b86e5, #36d1dc);
+}
+
+.bannerButton {
+  margin: 3rem 0;
+  justify-self: flex-end;
+}

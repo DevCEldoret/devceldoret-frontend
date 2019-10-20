@@ -1,120 +1,45 @@
 import React from "react";
-import {
-  Button,
-  Toolbar,
-  AppBar,
-  makeStyles,
-  createStyles,
-  IconButton,
-  Drawer,
-  Divider,
-  List,
-  ListItem,
-  ListItemText
-} from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import logo from "../../assets/img/logo_light.png";
+import logo from "../../assets/img/logo.png";
 import { navbarLinks } from "./navbar-links";
 import { Link } from "react-router-dom";
-
-export default function Navbar() {
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
-  const styles = makeStyles(theme =>
-    createStyles({
-      desktopButtonBar: {
-        [theme.breakpoints.down("xs")]: {
-          display: "none"
-        }
-      },
-      mobileMenuButton: {
-        [theme.breakpoints.up("sm")]: {
-          display: "none"
-        }
-      },
-      drawer: {
-        width: "70%"
-      },
-      buttons: {
-        textTransform: "capitalize",
-        fontFamily: "Open Sans"
-      },
-      closeMobileMenuButton: {
-        display: "flex",
-        flexDirection: "row-reverse"
-      }
-    })
-  );
-
-  const classes = styles({});
-
+import styles from "./navbar.component.css";
+export default function Navigation() {
   return (
-    <div>
-      <AppBar position="fixed" color="default">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.mobileMenuButton}
-            color="primary"
-            aria-label="menu"
-            onClick={handleDrawerOpen}
-          >
-            <MenuIcon />
-          </IconButton>
-          <img
-            // @ts-ignore
-            width="300"
-            src={logo}
-            className={styles.logo}
-          />
-          <div
-            className={classes.desktopButtonBar}
-            style={{ marginLeft: "auto" }}
-          >
-            {navbarLinks.map(link => (
-              <Button
-                className={classes.buttons}
-                component={Link}
-                to={link.url}
-              >
-                {link.name}
-              </Button>
-            ))}
-          </div>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        variant="persistent"
-        anchor="left"
-        open={open}
-        classes={{
-          paper: classes.drawer
-        }}
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <Link to="/">
+        <img
+          // @ts-ignore
+          width="250"
+          src={logo}
+          className={styles.logo}
+          alt="Developer Circles Eldoret Logo"
+        />
+      </Link>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+        aria-controls="navbarColor03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
       >
-        <div className={classes.closeMobileMenuButton}>
-          <IconButton onClick={handleDrawerClose}>
-            <ChevronLeftIcon />
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          {navbarLinks.map(link => (
-            <ListItem button component={Link} to={link.url}>
-              <ListItemText primary={link.name}></ListItemText>
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-      </Drawer>
-    </div>
+        <span className="navbar-toggler-icon"></span>
+      </button>
+
+      <div className="collapse navbar-collapse" id="navbar">
+        <ul className="navbar-nav ml-auto">
+          {navbarLinks.map((link, index) => {
+            return (
+              <li className="nav-item" key={link.url}>
+                <Link className="nav-link" to={link.url}>
+                  {link.name}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </nav>
   );
 }

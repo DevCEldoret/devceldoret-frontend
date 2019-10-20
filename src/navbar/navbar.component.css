@@ -1,3 +1,10 @@
-.logo {
-  margin: 0 1rem;
+@media screen and (max-width: 720px) {
+  .logo {
+    width: 250px;
+  }
+}
+@media screen and (min-width: 721px) {
+  .logo {
+    width: 350px;
+  }
 }
