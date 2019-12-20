@@ -1,0 +1,51 @@
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0 0 0 90px;
+  background: linear-gradient(96.42deg, #3b5998 -41.04%, #00f2ff 102.98%);
+}
+
+.bannerBtn {
+  margin: 3rem 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.welcomeText {
+  margin-top: 4.5rem;
+  margin-bottom: 0;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.welcomeDescription {
+  font-size: 20px;
+  margin: 2rem 2rem 0 0;
+}
+
+.bannerImg {
+  align-self: flex-start;
+  position: absolute;
+}
+
+@media screen and (min-width: 720px) {
+  .banner {
+    height: 33rem;
+  }
+  .bannerImg {
+    bottom: -0.5rem;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  .banner {
+    height: 39rem;
+    border-radius: 0 0 0 60px;
+  }
+  .bannerImg {
+    bottom: -0.15rem;
+  }
+}
