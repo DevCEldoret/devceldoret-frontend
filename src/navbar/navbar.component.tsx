@@ -32,7 +32,12 @@ export default function Navigation() {
           {navbarLinks.map((link, index) => {
             return (
               <li className="nav-item" key={link.url}>
-                <Link className="nav-link" to={link.url}>
+                <Link
+                  className={
+                    link.name === "Blog" ? "btn btn-primary" : "nav-link"
+                  }
+                  to={link.url}
+                >
                   {link.name}
                 </Link>
               </li>
