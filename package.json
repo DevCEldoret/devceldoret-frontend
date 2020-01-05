@@ -60,7 +60,7 @@
     "typescript": "^3.7.4",
     "webpack": "^4.41.4",
     "webpack-bundle-analyzer": "^3.5.2",
-    "webpack-cli": "^3.3.9",
+    "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.8.2"
   },
   "author": "Developer Circles Community",
