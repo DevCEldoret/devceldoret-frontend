@@ -56,7 +56,7 @@
     "jest-cli": "^24.9.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
-    "style-loader": "^1.0.0",
+    "style-loader": "^1.1.4",
     "typescript": "^3.7.4",
     "webpack": "^4.41.4",
     "webpack-bundle-analyzer": "^3.5.2",
