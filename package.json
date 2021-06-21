@@ -48,7 +48,7 @@
     "eslint-config-ts-react-important-stuff": "^3.0.0",
     "eslint-plugin-prettier": "^3.1.1",
     "file-loader": "^5.0.2",
-    "gh-pages": "^2.1.1",
+    "gh-pages": "^3.2.2",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.1.0",
     "identity-obj-proxy": "^3.0.0",
